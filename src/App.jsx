@@ -2,6 +2,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import AppLayout from "./ui/AppLayout";
 import Home from "./ui/Home";
 import Menu, { loader as MenuLoader } from "./features/menu/Menu";
+import Cart, { loader as OrderLoader } from "./features/Cart/Cart";
 
 // const fakeCart = [
 //   {
@@ -39,6 +40,11 @@ const router = createBrowserRouter([
         path: "/menu",
         element: <Menu />,
         loader: MenuLoader,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
+        loader: OrderLoader,
       }
     ]
   }

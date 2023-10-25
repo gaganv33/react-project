@@ -7,11 +7,13 @@ function Menu(){
    console.log(data);
 
    return (
-         <ul className="divide-y divide-stone-500 px-2 w-screen">
-            {
-               data.map((item) => (<MenuItem key={item.id} item={item} />))
-            }
-         </ul>
+         <div className="mx-auto my-auto">
+            <ul className="divide-y divide-stone-500 px-3 w-screen">
+               {
+                  data.map((item) => (<MenuItem key={item.id} item={item} />))
+               }
+            </ul>
+         </div>
    )
 }
 
