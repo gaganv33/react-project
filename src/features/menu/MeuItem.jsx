@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 function MenuItem({ item }){
-   console.log(item);
+   
    return (
       <div className={`flex pb-2 pt-2 gap-3 ${item.soldOut ? "grayscale" : ""}`}>
          <img src={item.imageUrl} className="h-28" />
@@ -16,7 +16,8 @@ function MenuItem({ item }){
                {
                   !item.soldOut && (
                      <button className="rounded-full px-2 py-1 bg-yellow-500 text-xs font-medium uppercase tracking-wide
-                      focus:outline-none focus:ring focus:ring-yellow-500 focus:ring-offset-2 sm:px-4 sm:py-2">
+                      focus:outline-none focus:ring focus:ring-yellow-500 focus:ring-offset-2 sm:px-4 sm:py-2
+                      transition-all duration-300 hover:bg-yellow-400">
                         Add to cart
                      </button>
                   )
