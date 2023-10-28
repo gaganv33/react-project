@@ -3,6 +3,8 @@ import AppLayout from "./ui/AppLayout";
 import Home from "./ui/Home";
 import Menu, { loader as MenuLoader } from "./features/menu/Menu";
 import Cart, { loader as OrderLoader } from "./features/Cart/Cart";
+import Order, { loader as GetOrderLoader } from "./features/order/Order";
+import ErrorPage from "./ui/ErrorPage";
 
 // const fakeCart = [
 //   {
@@ -31,6 +33,7 @@ import Cart, { loader as OrderLoader } from "./features/Cart/Cart";
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
@@ -40,11 +43,19 @@ const router = createBrowserRouter([
         path: "/menu",
         element: <Menu />,
         loader: MenuLoader,
+        errorElement: <ErrorPage />,
       },
       {
         path: "/cart",
         element: <Cart />,
         loader: OrderLoader,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "/order/:orderID",
+        element: <Order />,
+        loader: GetOrderLoader,
+        errorElement: <ErrorPage />,
       }
     ]
   }

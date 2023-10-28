@@ -4,8 +4,7 @@ import CartItem from "./CartItem";
 
 function Cart(){
    const data = useLoaderData();
-   console.log(data);
-
+   
    return (
       <div className="px-4 py-3 flex flex-col items-start">
          <Link to="/menu" className="text-blue-500 hover:text-blue-700 hover:underline pb-3 sm:mx-auto sm:w-[70%]">&larr; Back to menu</Link>

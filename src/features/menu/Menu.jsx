@@ -8,7 +8,7 @@ function Menu(){
 
    return (
          <div className="mx-auto my-auto">
-            <ul className="divide-y divide-stone-500 px-3 w-screen">
+            <ul className="divide-y divide-stone-500 px-3 sm:w-[80%] mx-auto">
                {
                   data.map((item) => (<MenuItem key={item.id} item={item} />))
                }
