@@ -2,10 +2,14 @@ import { Outlet, useNavigation } from "react-router";
 import Header from "./Header";
 import CartOverView from "../features/Cart/CartOverView";
 import Loader from "./Loader";
+import { useSelector } from "react-redux";
 
 function AppLayout(){
    const navigation = useNavigation();
    const isLoading = navigation.state === "loading";
+   const cart = useSelector((store) => {
+      return store.cart;
+   })
 
    return (
       <>
@@ -17,7 +21,9 @@ function AppLayout(){
             <main className="mx-auto overflow-y-scroll w-screen">
                <Outlet />
             </main>
-            <CartOverView />
+            {
+               cart.cart.length !== 0 && <CartOverView />
+            }
          </div>
       </>
    );

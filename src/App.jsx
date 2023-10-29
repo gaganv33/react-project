@@ -2,33 +2,10 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import AppLayout from "./ui/AppLayout";
 import Home from "./ui/Home";
 import Menu, { loader as MenuLoader } from "./features/menu/Menu";
-import Cart, { loader as OrderLoader } from "./features/Cart/Cart";
+import Cart from "./features/Cart/Cart";
 import Order, { loader as GetOrderLoader } from "./features/order/Order";
 import ErrorPage from "./ui/ErrorPage";
-
-// const fakeCart = [
-//   {
-//     pizzaId: 12,
-//     name: 'Mediterranean',
-//     quantity: 2,
-//     unitPrice: 16,
-//     totalPrice: 32,
-//   },
-//   {
-//     pizzaId: 6,
-//     name: 'Vegetale',
-//     quantity: 1,
-//     unitPrice: 13,
-//     totalPrice: 13,
-//   },
-//   {
-//     pizzaId: 11,
-//     name: 'Spinach and Mushroom',
-//     quantity: 1,
-//     unitPrice: 15,
-//     totalPrice: 15,
-//   },
-// ];
+import NewOrder, { action as NewOrderAction } from "./features/order/NewOrder";
 
 const router = createBrowserRouter([
   {
@@ -48,7 +25,6 @@ const router = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />,
-        loader: OrderLoader,
         errorElement: <ErrorPage />,
       },
       {
@@ -56,6 +32,11 @@ const router = createBrowserRouter([
         element: <Order />,
         loader: GetOrderLoader,
         errorElement: <ErrorPage />,
+      },
+      {
+        path: "/order/new",
+        element: <NewOrder />,
+        action: NewOrderAction,
       }
     ]
   }
