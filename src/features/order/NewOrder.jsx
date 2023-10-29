@@ -54,8 +54,7 @@ function NewOrder(){
                <h2 className="tracking-wide font-semibold sm:w-[30%]">First Name</h2>
                <input type="text" className="w-full px-4 py-3 rounded-full text-sm sm:text-base
                   focus:outline-none focus:ring focus:ring-yellow-400 focus:ring-offset-2 transition-all
-                  duration-300 bg-stone-200" name="customer" value={user.name !== "" ? user.name : ""}
-                  readOnly
+                  duration-300 bg-stone-200" name="customer" defaultValue={user.name !== "" ? user.name : ""}
                />
             </div>
 
