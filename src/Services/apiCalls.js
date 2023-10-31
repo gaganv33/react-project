@@ -37,3 +37,22 @@ export async function createOrder(newOrder){
     return data.data;
 }
 
+export async function updateOrder(orderId, data){
+   try{
+      const res = await fetch(`${API_URL}/order/${orderId}`, {
+         method: "PATCH",
+         body: JSON.stringify(data),
+         headers: {
+            "Content-Type" : "application/json",
+         },
+      });
+   
+      if(!res.ok){
+         throw new Error("Error in updating the order information.");
+      }   
+   }
+   catch(err){
+      throw new Error("Error in updating the order information.");
+   }
+}
+
